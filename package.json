@@ -1,0 +1,13 @@
+{
+    "name": "php-blog-project",
+    "version": "1.0.0",
+    "description": "PHP Blog CRUD Application with Tailwind CSS and DaisyUI",
+    "scripts": {
+        "build-css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/style.css --watch",
+        "build-css-prod": "tailwindcss -i ./assets/css/input.css -o ./assets/css/style.css --minify"
+    },
+    "devDependencies": {
+        "tailwindcss": "^3.4.0",
+        "daisyui": "^4.4.0"
+    }
+}

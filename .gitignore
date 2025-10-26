@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Build outputs
+assets/css/style.css
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE - VSCode
+.vscode/
+*.code-workspace
+
+# IDE - PhpStorm
+.idea/
+*.iml
+
+# IDE - NetBeans
+nbproject/
+build/
+
+# OS - macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# OS - Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# OS - Linux
+*~
+
+# Temporary files
+*.log
+*.tmp
+*.temp
+*.swp
+*.cache
+
+# Build artifacts
+*.min.css
+*.min.js
+
