@@ -86,14 +86,13 @@ class BlogController
                 'title' => $_POST['title'] ?? '',
                 'content' => $_POST['content'] ?? '',
                 'author' => $_POST['author'] ?? '',
-                'image_data' => $blog['image_data'], // เก็บรูปเดิมไว้ก่อน
+                'image_data' => $blog['image_data'],
                 'image_mime_type' => $blog['image_mime_type'],
                 'image_filename' => $blog['image_filename']
             ];
 
             $errors = $this->blogModel->validate($data);
 
-            // จัดการอัพโหลดรูปภาพใหม่
             if (isset($_FILES['image']) && $_FILES['image']['error'] !== UPLOAD_ERR_NO_FILE) {
                 $imageResult = $this->blogModel->uploadImage($_FILES['image']);
                 if ($imageResult === false) {
@@ -145,7 +144,7 @@ class BlogController
 
         header('Content-Type: ' . $imageData['image_mime_type']);
         header('Content-Disposition: inline; filename="' . $imageData['image_filename'] . '"');
-        header('Cache-Control: public, max-age=31536000'); // Cache for 1 year
+        header('Cache-Control: public, max-age=31536000');
 
         echo $imageData['image_data'];
         exit;

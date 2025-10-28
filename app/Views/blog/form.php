@@ -19,6 +19,7 @@ $isSuccess = $data['success'] ?? false;
 
 <body class="bg-base-200 min-h-screen">
     <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Header -->
         <div class="navbar bg-base-100 shadow-lg rounded-box mb-8">
             <div class="flex-1">
                 <div class="flex items-center gap-3">
@@ -52,12 +53,15 @@ $isSuccess = $data['success'] ?? false;
                 </a>
             </div>
         </div>
+        <!-- End Header -->
 
+        <!-- Main Content -->
         <main>
             <div class="card bg-base-100 shadow-lg">
                 <div class="card-body">
                     <h2 class="card-title text-3xl mb-6"><?= $pageTitle ?></h2>
 
+                    <!-- Errors -->
                     <?php if (!empty($errors)): ?>
                         <div class="alert alert-error mb-6">
                             <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none"
@@ -75,8 +79,11 @@ $isSuccess = $data['success'] ?? false;
                             </div>
                         </div>
                     <?php endif; ?>
+                    <!-- End Errors -->
 
+                    <!-- Form -->
                     <form method="POST" enctype="multipart/form-data" class="space-y-6">
+                        <!-- Title -->
                         <div class="form-control">
                             <label class="label" for="title">
                                 <span class="label-text font-semibold">Title</span>
@@ -85,7 +92,9 @@ $isSuccess = $data['success'] ?? false;
                                 value="<?= htmlspecialchars($data['title'], ENT_QUOTES, 'UTF-8') ?>"
                                 class="input input-bordered w-full" placeholder="Enter post title" required>
                         </div>
+                        <!-- End Title -->
 
+                        <!-- Author -->
                         <div class="form-control">
                             <label class="label" for="author">
                                 <span class="label-text font-semibold">Author</span>
@@ -94,7 +103,9 @@ $isSuccess = $data['success'] ?? false;
                                 value="<?= htmlspecialchars($data['author'], ENT_QUOTES, 'UTF-8') ?>"
                                 class="input input-bordered w-full" placeholder="Enter author name" required>
                         </div>
+                        <!-- End Author -->
 
+                        <!-- Featured Image -->
                         <div class="form-control">
                             <label class="label" for="image">
                                 <span class="label-text font-semibold">Featured Image</span>
@@ -118,7 +129,9 @@ $isSuccess = $data['success'] ?? false;
                                 </div>
                             </fieldset>
                         </div>
+                        <!-- End Featured Image -->
 
+                        <!-- Content -->
                         <div class="form-control">
                             <label class="label" for="content">
                                 <span class="label-text font-semibold">Content</span>
@@ -128,7 +141,9 @@ $isSuccess = $data['success'] ?? false;
                                 placeholder="Write your post content here..."
                                 required><?= htmlspecialchars($data['content'], ENT_QUOTES, 'UTF-8') ?></textarea>
                         </div>
+                        <!-- End Content -->
 
+                        <!-- Form Actions -->
                         <div class="card-actions justify-end">
                             <?php if ($isEdit): ?>
                                 <a href="/php-project/show/<?= htmlspecialchars($data['id']) ?>"
@@ -153,12 +168,16 @@ $isSuccess = $data['success'] ?? false;
                                 </button>
                             <?php endif; ?>
                         </div>
+                        <!-- End Form Actions -->
                     </form>
+                    <!-- End Form -->
                 </div>
             </div>
         </main>
+        <!-- End Main Content -->
     </div>
 
+    <!-- Loading Modal -->
     <dialog id="loadingModal" class="modal">
         <div class="modal-box text-center">
             <div class="loading mx-auto mb-4"></div>
@@ -169,7 +188,9 @@ $isSuccess = $data['success'] ?? false;
             <button>close</button>
         </form>
     </dialog>
+    <!-- End Loading Modal -->
 
+    <!-- Success Modal -->
     <?php if ($isSuccess && $successMessage): ?>
         <dialog id="successModal" class="modal" open>
             <div class="modal-box text-center">
@@ -189,7 +210,9 @@ $isSuccess = $data['success'] ?? false;
             </form>
         </dialog>
     <?php endif; ?>
+    <!-- End Success Modal -->
 
+    <!-- Scripts -->
     <script>
         document.querySelector('form').addEventListener('submit', function () {
             document.getElementById('loadingModal').showModal();
@@ -205,6 +228,7 @@ $isSuccess = $data['success'] ?? false;
             }, 3000);
         <?php endif; ?>
     </script>
+    <!-- End Scripts -->
 </body>
 
 </html>

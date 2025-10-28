@@ -30,8 +30,9 @@
                 </a>
             </div>
         </div>
+        <!-- End Header -->
 
-
+        <!-- Main Content -->
         <main>
             <?php if (empty($blogs)): ?>
                 <div class="hero min-h-96 bg-base-100 rounded-box shadow-lg">
@@ -85,8 +86,10 @@
                 </div>
             <?php endif; ?>
         </main>
+        <!-- End Main Content -->
     </div>
 
+    <!-- Delete Confirmation Modals -->
     <?php foreach ($blogs as $blog): ?>
         <dialog id="deleteModal<?= $blog['id'] ?>" class="modal">
             <div class="modal-box">
@@ -108,6 +111,7 @@
             </form>
         </dialog>
     <?php endforeach; ?>
+    <!-- End Delete Confirmation Modals -->
 </body>
 
 </html>

@@ -40,7 +40,9 @@
                 </a>
             </div>
         </div>
+        <!-- End Header -->
 
+        <!-- Main Content -->
         <main>
             <article class="card bg-base-100 shadow-lg">
                 <div class="card-body">
@@ -122,6 +124,7 @@
                 </div>
             </article>
         </main>
+        <!-- End Main Content -->
     </div>
 </body>
 
